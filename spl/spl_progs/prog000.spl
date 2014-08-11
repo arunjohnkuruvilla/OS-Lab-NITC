@@ -1,6 +1,6 @@
 //Load exception handler
-load (1, 7);
-load (2, 8);
+load (7, 1);
+load (8, 2);
 
 //Load Interrupt 7 routine
 load (23, 17);
@@ -14,7 +14,7 @@ load (25, 21);
 load (26, 22);
 load (27, 23);
 
-PTBR = 1024;
+PTBR = PAGE_TABLE;
 PTLR = 4;
 
 [PTBR + 0] = 25; // Physical Page Number for Logical Page 0
