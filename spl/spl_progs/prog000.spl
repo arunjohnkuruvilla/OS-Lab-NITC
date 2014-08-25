@@ -39,4 +39,7 @@ SP = 3 * 512;
 
 breakpoint;
 
+load (11, 5);
+load (12, 6);
+
 ireturn;
