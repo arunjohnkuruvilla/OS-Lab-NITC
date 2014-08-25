@@ -7,6 +7,7 @@ integer main()
 	while i<51 do
 		print(i);
 		i = i + 1;
+		
 	endwhile;
 	return 0;
 }
