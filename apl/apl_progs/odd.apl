@@ -4,7 +4,7 @@ enddecl
 integer main()
 {
 	i = 1;
-	while i<21 do
+	while (i < 21) do
 		if (i%2 == 1) then
 			print(i);
 		endif;

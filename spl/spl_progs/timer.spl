@@ -23,6 +23,41 @@ physicalSP = ([PTBR + 2 * (SP / 512)] * 512) + (SP % 512);
 [currentPCB + 13] = R6;
 [currentPCB + 14] = R7;
  
-alias newPCB s4;
-newPCB = currentPCB + 32;
-while (newPCB != currentPCB)
+
+alias checkPCB S4;
+alias newPCB S6;
+alias max S5;
+max = READY_LIST + 1024;
+checkPCB = currentPCB + 32;
+while (checkPCB != currentPCB) do
+	if(checkPCB == max) then
+		checkPCB = READY_LIST;
+	endif;
+	if ([checkPCB + 1] == 1) then 
+		newPCB = checkPCB;
+		break;
+	else 
+		checkPCB = checkPCB + 32;
+	endif;
+endwhile;
+
+[newPCB + 1] = 2;
+BP = [newPCB + 2];
+SP = [newPCB + 3];
+PTBR = [newPCB + 5];
+PTLR = [newPCB + 6];
+R0 = [newPCB + 7];
+R1 = [newPCB + 8];
+R2 = [newPCB + 9];
+R3 = [newPCB + 10];
+R4 = [newPCB + 11];
+R5 = [newPCB + 12];
+R6 = [newPCB + 13];
+R7 = [newPCB + 14];
+
+SP = SP + 1;
+alias newphysicalSP S2;
+newphysicalSP = ([PTBR + 2 * (SP / 512)] * 512) + (SP % 512);
+[newphysicalSP] = [newPCB + 4];
+
+ireturn;
