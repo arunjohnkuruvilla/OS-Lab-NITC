@@ -1,0 +1,56 @@
+//Load exception handler
+load (7, 1);
+load (8, 2);
+
+//Load Interrupt 7 routine
+load (23, 17);
+load (24, 18);
+
+//assign PID 0 to INIT program
+[READY_LIST + 0] = 0;
+
+//load INIT program
+load (25, 21);
+load (26, 22);
+load (27, 23);
+
+PTBR = PAGE_TABLE;
+PTLR = 4;
+
+alias i S0;
+alias j S1;
+i = 0;
+j = 25;
+while (i <= 6) do
+	[PTBR + i] = j; // Physical Page Number for Logical Page 0
+	[PTBR + i+1] = "01"; // Auxiliary Information for Logical Page 0
+	i = i + 2;
+	j = j + 1;
+endwhile;
+
+// Sets the entry for STATE as Running
+[READY_LIST + 1] = 2; 
+
+breakpoint;
+
+SP = 3 * 512;
+
+[28 * 512] = 0;
+
+breakpoint;
+
+//load interupt 1
+load (11, 5);
+load (12, 6);
+
+//load timer interupt
+load (9, 3);
+load (10, 4);
+
+//load FAT from disk 
+load (5, 19);
+
+//load Disk Free List
+load (6, 20);
+
+ireturn;
