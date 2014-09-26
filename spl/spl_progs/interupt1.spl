@@ -15,15 +15,31 @@ if(systemCallNo == 1) then
 	while(currentBlock != 3520) do
 		freeBlock = [currentBlock];
 		if(freeBlock == 0) then
-			[physicalSP - 2] = 0;
-			ireturn;
+			break;
 		endif;
 		currentBlock = currentBlock + 1;
 	endwhile;
 	if(freeBlock != 0) then
 		[physicalSP - 2] = -1;
 		ireturn;
+	else
+		alias i S5;
+		i = 0;
+		alias fileNameToCheck S6;
+		while(i != 64) do
+			fileNameToCheck = [FAT + (i * 8)];
+			if(arguement1 == fileNameToCheck) then 
+				i = 1;
+				break;
+			endif;
+			i = i + 1;
+		endwhile;
+		if(i == 1) then 
+			[physicalSP - 2] = 1;
+			ireturn;
+		else
+			[physicalSP - 2] = 2;
+			ireturn;
+		endif;
 	endif;
 endif;
-
-ireturn;
