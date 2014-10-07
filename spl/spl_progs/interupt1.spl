@@ -9,8 +9,23 @@ alias arguement1 S2;
 arguement1 = [physicalSP - 3];
 
 if(systemCallNo == 1) then 
+
+	//checking if filename exists
+	alias i S5;
+	i = 0;
+	alias fileNameToCheck S6;
+	while(i != 64) do
+		fileNameToCheck = [FAT + (i * 8)];
+		if(arguement1 == fileNameToCheck) then 
+			[physicalSP - 2] = 0;
+			ireturn;
+		endif;
+		i = i + 1;
+	endwhile;
+
 	alias currentBlock S3;
 	alias freeBlock S4;
+	i=0;
 	currentBlock = 3072;
 	while(currentBlock != 3520) do
 		freeBlock = [currentBlock];
@@ -18,27 +33,40 @@ if(systemCallNo == 1) then
 			break;
 		endif;
 		currentBlock = currentBlock + 1;
+		i=i+1;
 	endwhile;
+	currentBlock = i;
 	if(freeBlock != 0) then
 		[physicalSP - 2] = -1;
 		ireturn;
 	else
-		alias i S5;
 		i = 0;
-		alias fileNameToCheck S6;
+		alias freeFATBlock S8;
 		while(i != 64) do
-			fileNameToCheck = [FAT + (i * 8)];
-			if(arguement1 == fileNameToCheck) then 
-				i = 1;
+			freeFATBlock = FAT + (i * 8);
+			if([freeFATBlock + 2] == -1) then 
 				break;
 			endif;
 			i = i + 1;
 		endwhile;
-		if(i == 1) then 
+		if([freeFATBlock + 2] != -1) then 
 			[physicalSP - 2] = 1;
 			ireturn;
-		else
-			[physicalSP - 2] = 2;
+		else 
+			[freeFATBlock] = arguement1;
+			[freeFATBlock + 1] = 0;
+			[freeFATBlock + 2] = currentBlock;
+			load(1, currentBlock);
+			i = 0;
+			while(i != 512) do 
+				[512 + i] = -1;
+				i = i + 1;
+			endwhile;
+			store(1, currentBlock);
+			[3072 + currentBlock] = 1;
+			store (5, 19);
+			store (6, 20);
+			[physicalSP - 2] = 0;
 			ireturn;
 		endif;
 	endif;
