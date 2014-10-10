@@ -1,7 +1,7 @@
 integer main()
 {	
 	integer a;
-	a = Create("harry.txt");
+	a = Create("myfile.txt");
 	print (a);
 	return(0);
 }
