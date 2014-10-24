@@ -1,0 +1,129 @@
+//change return values
+// -1 = no FAT entry found
+// -2 = no SYS entry free
+
+alias physicalSP S0;
+physicalSP = ([PTBR + 2 * (SP / 512)] *512) + (SP % 512);
+
+//to get system call number
+alias systemCallNo S1;
+systemCallNo = [physicalSP - 1];
+
+alias arguement1 S2;
+arguement1 = [physicalSP - 3];
+
+if(systemCallNo == 2) then
+	//checking if filename exists
+	alias i S5;
+	i = 0;
+
+	//searching filename in FAT table
+	alias fileNameToCheck S6;
+	alias fileFATentry S7;
+	alias fileSYSentry S8;
+	fileSYSentry = -1;
+	fileFATentry = -1;
+	while(i != 64) do
+		fileNameToCheck = [FAT + (i * 8)];
+		if(arguement1 == fileNameToCheck) then 
+			fileFATentry = i;									//save FAT entry if found
+			break;
+		endif;
+		i = i + 1;
+	endwhile;
+
+	if(fileFATentry == -1) then
+		[physicalSP - 2] = -1;									//return -1 if file not found
+		ireturn;
+	endif;
+
+	i = 0;
+	while (i < 128) do											//64 enteries, each of size 2
+		if( [FILE_TABLE + i] == fileFATentry )	then			//if fileFATentry index exists in system wide open file table
+			fileSYSentry = i;									//save SYS entry if found
+			break;
+		endif;
+		i = i + 2;
+	endwhile;
+
+	//if fileFATentry not found in sys wide open table check if free entry available
+	if(fileSYSentry == -1) then 
+		i = 0;
+		while (i < 128) do										//64 enteries, each of size 2
+			if( [FILE_TABLE + i] == -1)	then					//FAT index to -1
+				fileSYSentry = i;		
+				break;
+			endif;
+			i = i + 2;
+		endwhile;
+	endif;
+
+	//if not free entry in sys wide open table 
+	if(fileSYSentry == -1) then
+		[physicalSP - 2] = -2;									//return -2 if file not found
+		ireturn;
+	endif;
+
+	//get current PID
+	alias currentPID S9;
+	alias currentPCBentry S10;
+	currentPCBentry = -1;
+	currentPID = (PTBR - 1024) / 8;
+	i = 0;
+	while(i != 8) do
+		if([1536 + currentPID*32 + 15 + i*2] == -1) then
+			currentPCBentry = i;
+			break;
+		endif;
+		i = i + 1;
+	endwhile;
+
+	//if no free entry in Per-process Open File Table in PCB
+	if (currentPCBentry == -1) then
+		[physicalSP - 2] = -3;									//return -3 if file not found
+		ireturn;
+	endif;
+
+	[1536 + currentPID*32 + 15 + i] = fileSYSentry;
+	[1536 + currentPID*32 + 15 + i + 1] = 0;
+
+	[FILE_TABLE + fileSYSentry*2] = fileFATentry;
+	[FILE_TABLE + fileSYSentry*2 + 1] = [FILE_TABLE + fileSYSentry*2 +1] + 1;
+
+	[physicalSP - 2] = currentPCBentry;
+	ireturn;
+endif;
+
+if(systemCallNo == 3) then
+	if(arguement1 < 0) then
+		[physicalSP - 2] = -1;
+		ireturn;
+	endif;
+	if(arguement1 > 7) then 
+		[physicalSP -2 ] = -1;
+		ireturn;
+	endif;
+
+	//get current PID
+	alias currentPID S9;
+	currentPID = (PTBR - 1024) / 8;
+
+	if([1536 + currentPID*32 + 15 + arguement1*2] == -1) then 
+		[physicalSP -2 ] = -1;
+		ireturn;
+	endif;
+
+	alias SYStableEntry S5;
+	SYStableEntry = [1536 + currentPID*32 + 15 + arguement1*2];	
+	if([FILE_TABLE + SYStableEntry + 1] > 0) then
+		[FILE_TABLE + SYStableEntry + 1] = [FILE_TABLE + SYStableEntry + 1] - 1;
+	else 
+		[FILE_TABLE + SYStableEntry] = -1;
+	endif;
+
+	[1536 + currentPID*32 + 15 + arguement1*2] = -1;
+	[1536 + currentPID*32 + 15 + arguement1*2 + 1] = -1;
+
+	[physicalSP -2 ] = 0;
+	ireturn;
+endif;

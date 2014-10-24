@@ -71,3 +71,73 @@ if(systemCallNo == 1) then
 		endif;
 	endif;
 endif;
+
+if(systemCallNo == 4) then 
+
+	//checking if filename exists in FAT. If not return with -1
+	alias i S5;
+	i = 0;
+	alias fileFATindex S6;
+	fileFATindex = -1;
+	while(i != 64) do
+		if([FAT + (i * 8)] == arguement1) then 
+			fileFATindex = i;
+		endif;
+		i = i + 1;
+	endwhile;
+
+	if(fileFATindex == -1) then
+		[physicalSP - 2] = -1;
+		ireturn;
+	endif;
+
+	//Check if the file is open in System Wide Open Table. Return -1 if open
+	i=0;
+	while(i != 64) do
+		if([FILE_TABLE + i*2] == fileFATindex) then
+			[physicalSP - 2] = -1;
+			ireturn;
+		endif;
+		i = i + 1;
+	endwhile;
+
+	//load basic block of file to scratchpad;
+	load(1,[FAT + fileFATindex*8 + 2]);
+
+	alias j S6;
+	alias k S7;
+	j = 0;
+	while([512 + j] != -1) do 
+		k = [512 + j];
+		load(1 , k);
+		i=0;
+		while(i != 512) do
+			[512 + i] = "";
+			i = i + 1;
+		endwhile;
+		store (1, k);	
+		load (1,[FAT + fileFATindex*8 + 2]);
+		j = j + 1;
+
+		if(j == 256) then 
+			break;
+		endif;
+	endwhile;
+
+	i=0;
+	while(i != 512) do
+		[512 + i] = "";
+		i = i + 1;
+	endwhile;
+
+	store (1,[FAT + fileFATindex*8 + 2]);
+
+	[3072 + fileFATindex*8 + 2] = 0;
+	[fileFATindex*8] -1;
+	[fileFATindex*8 + 2] = -1;
+	store (5, 19);
+	store (6, 20);
+
+	[physicalSP - 2] = 0;
+	ireturn;
+
