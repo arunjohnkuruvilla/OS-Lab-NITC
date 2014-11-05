@@ -95,7 +95,7 @@ if(systemCallNo == 4) then
 	i=0;
 	while(i != 64) do
 		if([FILE_TABLE + i*2] == fileFATindex) then
-			[physicalSP - 2] = -1;
+			[physicalSP - 2] = -2;
 			ireturn;
 		endif;
 		i = i + 1;
@@ -104,7 +104,7 @@ if(systemCallNo == 4) then
 	//load basic block of file to scratchpad;
 	load(1,[FAT + fileFATindex*8 + 2]);
 
-	alias j S6;
+	alias j S8;
 	alias k S7;
 	j = 0;
 	while([512 + j] != -1) do 
@@ -133,11 +133,12 @@ if(systemCallNo == 4) then
 	store (1,[FAT + fileFATindex*8 + 2]);
 
 	[3072 + fileFATindex*8 + 2] = 0;
-	[fileFATindex*8] -1;
-	[fileFATindex*8 + 2] = -1;
+	[FAT + fileFATindex*8] = -1;
+	[FAT + fileFATindex*8 + 2] = -1;
 	store (5, 19);
 	store (6, 20);
 
 	[physicalSP - 2] = 0;
 	ireturn;
 
+endif;

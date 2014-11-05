@@ -22,9 +22,9 @@ abcd.txt
 
 
 
-harry.txt
+newfile.txt
 0
-27
+26
 
 
 
@@ -38,9 +38,9 @@ myfile.txt
 
 
 
-newfile.txt
+-1
 0
-29
+-1
 
 
 

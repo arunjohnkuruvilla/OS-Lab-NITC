@@ -1,7 +1,3 @@
-//change return values
-// -1 = no FAT entry found
-// -2 = no SYS entry free
-
 alias physicalSP S0;
 physicalSP = ([PTBR + 2 * (SP / 512)] *512) + (SP % 512);
 
@@ -88,7 +84,7 @@ if(systemCallNo == 2) then
 	[1536 + currentPID*32 + 15 + i + 1] = 0;
 
 	[FILE_TABLE + fileSYSentry*2] = fileFATentry;
-	[FILE_TABLE + fileSYSentry*2 + 1] = [FILE_TABLE + fileSYSentry*2 +1] + 1;
+	[FILE_TABLE + fileSYSentry*2 + 1] = [FILE_TABLE + fileSYSentry*2 + 1] + 1;
 
 	[physicalSP - 2] = currentPCBentry;
 	ireturn;
@@ -100,7 +96,7 @@ if(systemCallNo == 3) then
 		ireturn;
 	endif;
 	if(arguement1 > 7) then 
-		[physicalSP -2 ] = -1;
+		[physicalSP -2 ] = -2;
 		ireturn;
 	endif;
 
@@ -109,21 +105,23 @@ if(systemCallNo == 3) then
 	currentPID = (PTBR - 1024) / 8;
 
 	if([1536 + currentPID*32 + 15 + arguement1*2] == -1) then 
-		[physicalSP -2 ] = -1;
+		[physicalSP -2 ] = -3;
 		ireturn;
 	endif;
 
 	alias SYStableEntry S5;
 	SYStableEntry = [1536 + currentPID*32 + 15 + arguement1*2];	
-	if([FILE_TABLE + SYStableEntry + 1] > 0) then
-		[FILE_TABLE + SYStableEntry + 1] = [FILE_TABLE + SYStableEntry + 1] - 1;
-	else 
-		[FILE_TABLE + SYStableEntry] = -1;
+	if([FILE_TABLE + SYStableEntry*2 + 1] > 0) then
+		[FILE_TABLE + SYStableEntry*2 + 1] = [FILE_TABLE + SYStableEntry*2 + 1] - 1;
+	endif;
+
+	if([FILE_TABLE + SYStableEntry*2 + 1] == 0) then
+		[FILE_TABLE + SYStableEntry*2] = -1;
 	endif;
 
 	[1536 + currentPID*32 + 15 + arguement1*2] = -1;
 	[1536 + currentPID*32 + 15 + arguement1*2 + 1] = -1;
 
-	[physicalSP -2 ] = 0;
+	[physicalSP - 2] = 0;
 	ireturn;
 endif;

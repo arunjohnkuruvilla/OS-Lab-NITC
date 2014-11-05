@@ -1,0 +1,92 @@
+alias physicalSP S0;
+physicalSP = ([PTBR + 2 * (SP / 512)] *512) + (SP % 512);
+
+//to get system call number
+alias systemCallNo S1;
+systemCallNo = [physicalSP - 1];
+
+alias arguement1 S2;
+alias arguement2 S3;
+arguement2 = [physicalSP - 3];
+arguement1 = [physicalSP - 4];
+
+if(systemCallNo == 5) then
+
+	if(arguement1 < 0) then
+		[physicalSP - 2] = -1;
+		ireturn;
+	endif;
+	if(arguement1 > 7) then 
+		[physicalSP - 2] = -5;
+		ireturn;
+	endif;
+
+	//get current PID
+	alias currentPID S7;
+	currentPID = (PTBR - 1024) / 8;
+
+	if([1536 + currentPID*32 + 15 + arguement1*2] == -1) then 
+		[physicalSP -2 ] = -3;
+		ireturn;
+	endif;
+
+	alias fileSYSentry S4;
+	alias fileSEEKposition S5;
+	fileSYSentry = [1536 + currentPID*32 + 15 + arguement1*2];
+	fileSEEKposition = [1536 + currentPID*32 + 15 + arguement1*2 + 1];
+
+	alias fileFATentry S6;
+	fileFATentry = [FILE_TABLE + fileSYSentry*2];
+
+
+
+	load(1, [FAT + fileFATentry*8 + 2]);
+
+	
+
+	if([512 + (fileSEEKposition / 512)] == -1) then
+		alias freeBlock S8;
+		alias i S9;
+		i=0;
+		freeBlock = -1;
+		while(i != 447) do
+			if([3072 + i] == 0) then
+				freeBlock = i;
+				break;
+			endif;
+			i=i+1;
+		endwhile;
+
+
+
+		if(freeBlock == -1) then
+			[physicalSP - 2] = -4;
+			ireturn;
+		else
+			[3072 + freeBlock] = 1;
+
+			[512 + (fileSEEKposition / 512)] = freeBlock;
+			store(1, [FAT + fileFATentry*8 + 2]);
+
+			[FAT + fileFATentry*8 + 1] = [FAT + fileFATentry*8 + 1] + 512;
+
+
+
+			store (5, 19);
+			store (6, 20);
+		endif;
+	endif;
+
+	alias i S9;
+	i = [512 + (fileSEEKposition / 512)];
+
+	load(1, i);
+	[512 + (fileSEEKposition % 512)] = arguement2;
+
+	store(1, i);
+	[1536 + currentPID*32 + 15 + arguement1*2 + 1] = fileSEEKposition + 1;
+
+	[physicalSP -2 ] = 0;
+	ireturn;
+	
+endif;
