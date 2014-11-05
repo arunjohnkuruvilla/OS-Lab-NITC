@@ -47,6 +47,10 @@ load (12, 6);
 load (13, 7);
 load (14, 8);
 
+//load interupt 3
+load (15, 9);
+load (16, 10);
+
 //load interupt 4
 load (17, 11);
 load (18, 12);
