@@ -118,3 +118,13 @@ if(systemCallNo == 9) then
 	[physicalSP] = 0;
 	ireturn;
 endif;
+
+if(systemCallNo == 11) then
+	[physicalSP - 2] = (PTBR - 1024) / 8;
+	ireturn;
+endif;
+
+if(systemCallNo == 12) then
+	[physicalSP - 2] = [READY_LIST + ((PTBR - 1024) / 8)*32 + 31];
+	ireturn;
+endif;

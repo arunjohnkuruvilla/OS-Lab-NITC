@@ -102,6 +102,75 @@ if(systemCallNo == 10) then
 	newphysicalSP = ([PTBR + 2 * (SP / 512)] * 512) + (SP % 512);
 	[newphysicalSP] = [currentPCB + 4];
 
+	i = 0;
+	//resume all waiting processes
+	while (i < 32) do
+		if([READY_LIST + i*32 + 1] >= 100) then
+			[READY_LIST + i*32 + 1] = [READY_LIST + i*32 + 1] - 100;
+		endif;
+		i = i + 1;
+	endwhile;
+	ireturn;
+endif;
+
+if (systemCallNo == 13) then
+	alias WaitingPID S8;
+	WaitingPID = [physicalSP-3];
+	if (([READY_LIST + WaitingPID*32 + 1] == 0) || ([READY_LIST + WaitingPID*32 + 1] == 2)) then
+		[physicalSP-2] = -1;
+		ireturn;
+	endif;
+	alias currentPCB S4;
+	currentPCB = READY_LIST + ((PTBR-PAGE_TABLE)/8)*32;
+	[currentPCB+1] = 100+WaitingPID;
+	alias i S6 ;
+	i = 0;
+	currentPCB = -1;
+
+	//check Ready List of PCBs for free Block
+	while (i < 32) do
+		if([READY_LIST + i*32 + 1] == 1) then
+			currentPCB = READY_LIST + i*32;
+			break;
+		endif;
+		i = i + 1;
+	endwhile;
+
+	[currentPCB + 1] = 2;
+	BP = [currentPCB + 2];
+	SP = [currentPCB + 3];
+	PTBR = [currentPCB + 5];
+	PTLR = [currentPCB + 6];
+	R0 = [currentPCB + 7];
+	R1 = [currentPCB + 8];
+	R2 = [currentPCB + 9];
+	R3 = [currentPCB + 10];
+	R4 = [currentPCB + 11];
+	R5 = [currentPCB + 12];
+	R6 = [currentPCB + 13];
+	R7 = [currentPCB + 14];
+
+	SP = SP + 1;
+	alias newphysicalSP S6;
+	newphysicalSP = ([PTBR + 2 * (SP / 512)] * 512) + (SP % 512);
 	[newphysicalSP] = [currentPCB + 4];
+
+	[newphysicalSP - 2] = 0;
+	ireturn;
+endif;
+
+if(systemCallNo == 14) then
+	alias i S2;
+	i = 0;
+	//resume all waiting processes
+	while (i < 32) do
+		if([READY_LIST + i*32 + 1] >= 100) then
+			[READY_LIST + i*32 + 1] = [READY_LIST + i*32 + 1] - 100;
+		endif;
+		i = i + 1;
+	endwhile;
+	ireturn;
+
+	[physicalSP - 2] = 0;
 	ireturn;
 endif;

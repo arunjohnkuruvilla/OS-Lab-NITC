@@ -100,6 +100,7 @@ if(systemCallNo == 8) then
 	[READY_LIST + freePCB*32 + 12] = R5;
 	[READY_LIST + freePCB*32 + 13] = R6;
 	[READY_LIST + freePCB*32 + 14] = R7;
+	[READY_LIST + freePCB*32 + 31] = currentPID;
 
 	//copy per process open file table to child
 	i=0;

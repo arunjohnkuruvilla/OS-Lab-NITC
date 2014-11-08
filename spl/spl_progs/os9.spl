@@ -27,6 +27,8 @@ endwhile;
 // Sets the entry for STATE as Running
 [READY_LIST + 1] = 2; 
 
+[READY_LIST + 31] = -1; 
+
 breakpoint;
 
 SP = 3 * 512;
