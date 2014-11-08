@@ -24,7 +24,6 @@ physicalSP = ([PTBR + 2 * (SP / 512)] * 512) + (SP % 512);
 [currentPCB + 14] = R7;
  
 
-
 alias checkPCB S4;
 alias newPCB S6;
 alias max S5;

@@ -1,4 +1,5 @@
 START
-MOV T0,  "hi"
+MOV T0, EFR
+MOD T0, 10
 OUT T0
 HALT

@@ -2,10 +2,6 @@
 load (7, 1);
 load (8, 2);
 
-//Load Interrupt 7 routine
-load (23, 17);
-load (24, 18);
-
 //assign PID 0 to INIT program
 [READY_LIST + 0] = 0;
 
