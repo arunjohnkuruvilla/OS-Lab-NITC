@@ -1,0 +1,18 @@
+if(systemCallNo == 14) then
+	print ("C");
+	alias i S2;
+	i = 0;
+	//resume all waiting processes
+	while (i < 32) do
+		alias currentPCB S3;
+		currentPCB = READY_LIST + i*32;
+		if([currentPCB + 1] >= 100) then
+			[currentPCB + 1] = 1;
+		endif;
+		i = i + 1;
+	endwhile;
+
+	print ("C");
+	[physicalSP - 2] = 0;
+	ireturn;
+endif;

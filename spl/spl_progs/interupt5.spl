@@ -119,7 +119,7 @@ if(systemCallNo == 8) then
 
 	[READY_LIST + freePCB*32 + 1] = 1;
 
-	[physicalSP - 2] = 0;
+	[physicalSP - 2] = freePCB;
 
 	alias childSP S8;
 	childSP = ([PAGE_TABLE + freePCB*8 + 2 * ((SP-1) / 512)] *512) + ((SP-1) % 512);

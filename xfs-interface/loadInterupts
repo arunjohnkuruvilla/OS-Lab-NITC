@@ -1,0 +1,2 @@
+load --int=7 $HOME/myxos/spl/spl_progs/int7.xsm
+exit

@@ -15,18 +15,19 @@ if(systemCallNo == 9) then
 	fileFATentry = -1;
 	i = 0;
 	while(i < 64) do
-		if ([FAT + i*8 + 1] == arguement1) then 
+		if ([FAT + i*8] == arguement1) then 
 			fileFATentry = i;
 			break;
 		endif;
+		i = i + 1;
 	endwhile;
 
 	if(fileFATentry == -1) then
-		[physicalSP - 2] = -1;
+		[physicalSP - 2] = -4;
 		ireturn;
 	endif;
 
-	load (1, [FAT + fileFATentry*8 +2]);
+	load (1, [FAT + fileFATentry*8 + 2]);
 
 	alias freeCodeBlocks S5;
 	freeCodeBlocks = 0;
@@ -39,7 +40,7 @@ if(systemCallNo == 9) then
 	alias codePages S6;
 	codePages = 0;
 	i = 0;
-	while (i < 4) do
+	while (i < 3) do
 		if ([PTBR + i*2] != -1) then
 			codePages = codePages+1;
 		else
@@ -49,8 +50,8 @@ if(systemCallNo == 9) then
 	endwhile;
 
 	if(codePages > freeCodeBlocks) then
-		i = codePages;
-		while(i < freeCodeBlocks) do
+		i = freeCodeBlocks + 1;
+		while(i < codePages-1) do
 			[1280 + [PTBR + i*2]] = 0;
 			[PTBR + i*2] = -1;
 			[PTBR + i*2 + 1] = "00";
@@ -86,8 +87,8 @@ if(systemCallNo == 9) then
 	endif;
 
 	i = 0;
-	while(i < 3) do
-		[PTBR + i*2] = [512 + i];
+	while(i < freeCodeBlocks) do
+		load([PTBR + i*2],[512 + i]);
 		i = i + 1;
 	endwhile;
 
@@ -95,6 +96,7 @@ if(systemCallNo == 9) then
 	alias currentPID S9;
 	currentPID = (PTBR - 1024) / 8;
 
+	i = 0;
 	while(i < 8) do
 		alias SYStableEntry S10;
 		SYStableEntry = [1536 + currentPID*32 + 15 + i*2];	
@@ -116,7 +118,10 @@ if(systemCallNo == 9) then
 	physicalSP = ([PTBR + 2 * (SP / 512)] *512) + (SP % 512);
 
 	[physicalSP] = 0;
+	[physicalSP - 2] = 0;
+
 	ireturn;
+
 endif;
 
 if(systemCallNo == 11) then
