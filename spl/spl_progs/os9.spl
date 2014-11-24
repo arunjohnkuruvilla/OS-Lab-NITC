@@ -8,7 +8,6 @@ load (8, 2);
 //load INIT program
 load (25, 21);
 load (26, 22);
-load (27, 23);
 
 PTBR = PAGE_TABLE;
 PTLR = 4;
@@ -17,12 +16,12 @@ alias i S0;
 alias j S1;
 i = 0;
 j = 25;
-while (i <= 6) do
-	[PTBR + i] = j; // Physical Page Number for Logical Page 0
-	[PTBR + i+1] = "01"; // Auxiliary Information for Logical Page 0
-	i = i + 2;
-	j = j + 1;
-endwhile;
+[PTBR + 0] = 25;
+[PTBR + 0+1] = "01";
+[PTBR + 2] = 26;
+[PTBR + 2+1] = "01";
+[PTBR + 6] = 27;
+[PTBR + 6+1] = "01";
 
 // Sets the entry for STATE as Running
 [READY_LIST + 1] = 2; 

@@ -82,7 +82,7 @@ if(systemCallNo == 5) then
 
 	load(1, i);
 	[512 + (fileSEEKposition % 512)] = arguement2;
-
+	print(arguement2);
 	store(1, i);
 	[1536 + currentPID*32 + 15 + arguement1*2 + 1] = fileSEEKposition + 1;
 

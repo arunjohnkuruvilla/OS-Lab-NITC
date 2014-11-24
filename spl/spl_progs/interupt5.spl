@@ -23,7 +23,6 @@ if(systemCallNo == 8) then
 		endif;
 		i = i + 1;
 	endwhile;
-
 	if(freePCB == -1) then
 		[physicalSP - 2] = -1;
 		ireturn;
@@ -45,7 +44,7 @@ if(systemCallNo == 8) then
 
 	alias freePages S5;
 	freePages = 0;
-	i = 30;
+	i = 29;
 	while(i<64) do
 		if([MEM_LIST + i] == 0) then
 			freePages = freePages + 1;
@@ -62,17 +61,25 @@ if(systemCallNo == 8) then
 
 	alias freePage S5;
 	alias k S6;
-	freePage=30;
+	
 	alias parentPage S10;
 	i=0;
 	while(i < 4) do	
+		if(i == 2) then 
+			i = i + 1;
+			continue;
+		endif;
+		
 		if([PTBR + i*2] != -1) then
-			while((freePage < 64) && ([MEM_LIST + freePage] != 0)) do
+			freePage=30;
+			while(freePage < 64) do 
+				if ([MEM_LIST + freePage] == 0) then
+					break;
+				endif;
 				freePage = freePage + 1;
 			endwhile;
 			
 			[MEM_LIST + freePage] = 1;
-
 			parentPage = [PTBR + i*2];
 			[PAGE_TABLE + (freePCB*8) + i*2] = freePage;
 			[PAGE_TABLE + (freePCB*8) + i*2 + 1] = "01";
