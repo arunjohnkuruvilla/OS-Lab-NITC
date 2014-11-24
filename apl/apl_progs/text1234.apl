@@ -3,10 +3,10 @@ integer main()
 	integer a,b,c,d,word,i,p,q,e;
 	//a = Create("sample2.txt");
 	
-	b = Create("final.txt");
-	b = Open("final.txt");
-	p = Open("sample12.txt");
-	q = Open("sample34.txt");
+	b = Create("a.txt");
+	b = Open("a.txt");
+	p = Open("a12.txt");
+	q = Open("a34.txt");
 	
 
 	i = 10;

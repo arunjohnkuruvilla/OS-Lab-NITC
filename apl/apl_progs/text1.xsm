@@ -16,7 +16,7 @@ PUSH R0
 MOV R0, 7
 MOV R1, BP
 ADD R0, R1
-MOV R1, "sample1.txt"
+MOV R1, "a1.txt"
 PUSH R1
 PUSH R0
 MOV R1, 1
@@ -29,7 +29,7 @@ MOV [R0], R1
 MOV R0, 7
 MOV R1, BP
 ADD R0, R1
-MOV R1, "sample1.txt"
+MOV R1, "a1.txt"
 PUSH R1
 PUSH R0
 MOV R1, 2

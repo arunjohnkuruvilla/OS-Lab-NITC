@@ -16,7 +16,7 @@ PUSH R0
 MOV R0, 2
 MOV R1, BP
 ADD R0, R1
-MOV R1, "final.txt"
+MOV R1, "a.txt"
 PUSH R1
 PUSH R0
 MOV R1, 1
@@ -29,7 +29,7 @@ MOV [R0], R1
 MOV R0, 2
 MOV R1, BP
 ADD R0, R1
-MOV R1, "final.txt"
+MOV R1, "a.txt"
 PUSH R1
 PUSH R0
 MOV R1, 2
@@ -42,7 +42,7 @@ MOV [R0], R1
 MOV R0, 7
 MOV R1, BP
 ADD R0, R1
-MOV R1, "sample12.txt"
+MOV R1, "a12.txt"
 PUSH R1
 PUSH R0
 MOV R1, 2
@@ -55,7 +55,7 @@ MOV [R0], R1
 MOV R0, 8
 MOV R1, BP
 ADD R0, R1
-MOV R1, "sample34.txt"
+MOV R1, "a34.txt"
 PUSH R1
 PUSH R0
 MOV R1, 2

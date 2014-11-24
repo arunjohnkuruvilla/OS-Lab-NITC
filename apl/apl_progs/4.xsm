@@ -180,7 +180,7 @@ JZ R0, 00386
 MOV R0, "Proc10"
 OUT R0
 MOV R0, 1536
-MOV R1, "test3.xsm"
+MOV R1, "text3.xsm"
 PUSH R1
 PUSH R0
 MOV R1, 9
@@ -273,7 +273,7 @@ MOV [R0], R1
 MOV R0, "Proc9"
 OUT R0
 MOV R0, 1536
-MOV R1, "text1234.xsm"
+MOV R1, "final.xsm"
 PUSH R1
 PUSH R0
 MOV R1, 9

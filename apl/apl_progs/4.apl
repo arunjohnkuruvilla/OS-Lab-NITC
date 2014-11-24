@@ -35,7 +35,7 @@ integer main()
 		p6 = Fork();
     	if(p6 == -2) then  
     		print("Proc10");                     
-			a = Exec("test3.xsm");
+			a = Exec("text3.xsm");
 		endif;
 
 		a = Wait(p6);
@@ -51,6 +51,6 @@ integer main()
 	endif;
 	a = Wait(p3);
 	print("Proc9");
-	a = Exec("text1234.xsm");
+	a = Exec("final.xsm");
 	return 0;
 }
