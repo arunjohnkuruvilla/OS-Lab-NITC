@@ -31,68 +31,49 @@ if(systemCallNo == 8) then
 	//PID of new process is the index of the free PCB
 	[READY_LIST + freePCB*32] = freePCB;
 
-	//check for free pages in memory
+	alias freePage S5;
+	freePage = -1;
 	i = 0;
-	alias count S4;
-	count = 0;
-	while (i < 4) do
-		if([PTBR + i*2] != -1)then
-			count = count + 1;
-		endif;
-		i = i + 1;
-	endwhile;
-
-	alias freePages S5;
-	freePages = 0;
-	i = 29;
 	while(i<64) do
 		if([MEM_LIST + i] == 0) then
-			freePages = freePages + 1;
+			freePage = i;
+			break;
 		endif;
 		i = i + 1;
 	endwhile;
 
-	
-
-	if(freePages < count) then
-		[physicalSP - 2] = -3;								//not enough free pages in memory
+	if(freePage == -1) then
+		[physicalSP - 2] = -1;
 		ireturn;
 	endif;
-
-	alias freePage S5;
-	alias k S6;
 	
-	alias parentPage S10;
-	i=0;
-	while(i < 4) do	
-		if(i == 2) then 
-			i = i + 1;
-			continue;
-		endif;
-		
-		if([PTBR + i*2] != -1) then
-			freePage=30;
-			while(freePage < 64) do 
-				if ([MEM_LIST + freePage] == 0) then
-					break;
-				endif;
-				freePage = freePage + 1;
-			endwhile;
-			
-			[MEM_LIST + freePage] = 1;
-			parentPage = [PTBR + i*2];
-			[PAGE_TABLE + (freePCB*8) + i*2] = freePage;
-			[PAGE_TABLE + (freePCB*8) + i*2 + 1] = "01";
-			k = 0;
+	[MEM_LIST + freePage] = 1;
 
-			while(k < 512) do
-				[freePage * 512 + k] = [parentPage * 512 + k];
+	i = 0;
+	while(i != 512) do
+		[freePage * 512 + i] = [[PTBR + 6] * 512 + i];
+		i = i + 1;
+	endwhile;
 
-				k = k + 1;
-			endwhile;
+	[PAGE_TABLE + (freePCB) * 8 + 6] = freePage;
+	[PAGE_TABLE + (freePCB) * 8 + 7] = "01";
+
+	i = 0;
+	while(i != 3) do
+		[PAGE_TABLE + (freePCB) * 8 + i * 2] = [PAGE_TABLE + (currentPID) * 8 + i * 2];
+		[PAGE_TABLE + (freePCB) * 8 + i * 2 + 1] = [PAGE_TABLE + (currentPID) * 8 + i * 2 + 1];
+		if([PAGE_TABLE + (currentPID) * 8 + i * 2 + 1] == "01" || [PAGE_TABLE + (currentPID) * 8 + i * 2 + 1] == "11") then
+			[MEM_LIST + [PAGE_TABLE + (currentPID) * 8 + i * 2]] = [MEM_LIST + [PAGE_TABLE + (currentPID) * 8 + i * 2 + 1]]   ;
+		else
+			if([PAGE_TABLE + (currentPID) * 8 + i * 2] >= 448) then
+				[DISK_LIST + [PAGE_TABLE + (currentPID) * 8 + i * 2]] = [DISK_LIST + [PAGE_TABLE + (currentPID) * 8 + i * 2]] + 1;
+			endif;
 		endif;
 		i = i + 1;
-	endwhile; 
+	endwhile;
+	
+	store (6, 20); 	
+
 
 	[READY_LIST + freePCB*32 + 2] = BP;
 	[READY_LIST + freePCB*32 + 3] = SP - 1;
@@ -111,6 +92,7 @@ if(systemCallNo == 8) then
 
 	//copy per process open file table to child
 	i=0;
+	alias k S10;
 	while(i < 8) do
 		[READY_LIST + freePCB*32 + 15 + i*2] = [READY_LIST + currentPID*32 + 15 + i*2];
 		

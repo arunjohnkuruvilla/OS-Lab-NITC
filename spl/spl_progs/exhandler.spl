@@ -1,0 +1,120 @@
+alias Cause S0;
+alias virtualPage S1;
+alias Ip_addr S2;
+alias i S3;
+alias j S4;
+alias k S5;
+alias victimPage S6;
+alias freePage S7;
+alias physicalPageNo	S8;
+alias physicalSP S9;
+
+Cause = EFR%10;
+virtualPage = (EFR/10)%100;
+Ip_addr = EFR/1000;
+if (Cause != 0) then
+	if (Cause == 1) then
+		print "Illegal Instruction";
+	endif;
+	if (Cause == 2) then
+		print "Illegal Memory Access";
+	endif;
+	if (Cause == 3) then
+		print "Arithmetic Exception";
+	endif;
+	if (Cause == 4) then
+		print "Illegal Operands";
+	endif;
+	inline "JMP 11776";						//Go to exit
+else
+    if ([PTBR + virtualPage * 2]==-1) then
+		inline "JMP 11776";					//Go to exit
+    endif;
+
+    freePage = -1;
+	i = 0;
+
+	while (i < 64) do
+		if ([MEM_LIST + i] == 0) then
+			freePage = i;									//if a free page is found in MEM_LIST
+			[MEM_LIST + i] = 1;								//Set MEM_LIST entry to 1
+			break;
+		endif;
+		i = i+1;
+	endwhile;
+
+	if (freePage == -1) then								//if no free page is found
+		j = PTBR;
+		k = 1;
+		while (1) do
+			if (k == 4) then								//if we encounter a stack page
+				k = 1;			
+				j = j+2;
+				continue;
+			endif;
+			if  ([MEM_LIST + [j]] > 1) then					//if page is shared by more than one process
+                k = k+1;
+                j = j+2;
+                continue;
+			endif;
+			if (([j+1]=="00")||([j+1]=="01")) then			//if reference bit is 0
+				break;
+			endif;
+			if ([j+1]=="10") then							//if reference bit is 1 change it to 
+				[j+1] = "00";								//0 to give the page a second chance
+			endif;											//before getting replaced
+			if ([j+1]=="11") then
+				[j+1] = "01";
+			endif;
+			k = k+1;
+			j = j+2;
+			if (j>=1280) then
+				j = PAGE_TABLE;
+				k = 1;
+			endif;
+		endwhile;
+
+		victimPage = j;
+
+		k = 448;
+		while (k<512) do									
+			if ([DISK_LIST + k] == 0) then					//if free page is found in the swap space
+				break;
+			endif;
+			k = k+1;
+		endwhile;
+		if (k == 512) then									//exit if no space is found
+			inline "JMP 11776";
+		endif;
+
+		store([victimPage], k);								//store the victim page to the swap space page
+		[3072+k]  = [3072+k]+1;								//increment DISK_LIST entry to show the space is used
+
+		freePage = [victimPage];
+		[victimPage] = k;									//store location of swap page at the page table entry
+		[victimPage + 1] = "00";
+	endif;
+	
+	j = PTBR + virtualPage * 2;
+	physicalPageNo = [j];
+	if (([j+1]=="10")||([j+1]=="00")) then
+		if ((physicalPageNo > 20) && (physicalPageNo < 448)) then
+			load(freePage, physicalPageNo);
+		endif;
+		if ((physicalPageNo >= 448) && (physicalPageNo < 512))  then
+			load (freePage, physicalPageNo);
+			[3072 + physicalPageNo] = [3072 + physicalPageNo] - 1;
+		endif;
+	endif;
+
+	store (6, 20);
+
+	[j]=freePage;
+	[j+1]="11";
+
+	SP = SP+1;
+	physicalSP = [PTBR+((SP/512)*2)]*512 + (SP%512);
+	[physicalSP] = Ip_addr;
+	ireturn;
+endif;
+

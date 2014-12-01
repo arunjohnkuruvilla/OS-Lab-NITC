@@ -1,4 +1,4 @@
-
+//print("Enter timer");
 
 alias currentPID S0;
 currentPID = (PTBR - 1024) / 8;
@@ -64,7 +64,7 @@ R5 = [newPCB + 12];
 R6 = [newPCB + 13];
 R7 = [newPCB + 14];
 
-
+breakpoint;
 
 SP = SP + 1;
 alias newphysicalSP S2;

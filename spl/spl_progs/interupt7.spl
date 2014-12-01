@@ -51,7 +51,7 @@ if(systemCallNo == 10) then
 	i = 0;
 	while(i < 8) do
 		alias SYStableEntry S10;
-		SYStableEntry = FILE_TABLE + [currentPCB + 15 + i*2]*2;	
+		SYStableEntry = FILE_TABLE + [currentPCB + 15 + i*2] * 2;	
 		if([SYStableEntry + 1] > 0) then
 			[SYStableEntry + 1] = [SYStableEntry + 1] - 1;
 		endif;
@@ -69,9 +69,23 @@ if(systemCallNo == 10) then
 
 	i = 0;
 	while(i < 4) do
-		[MEM_LIST + [PTBR + i*2]] = 0;
+		if ([PTBR + i*2] < 64) && ([PTBR + i*2] != -1) then
+			[MEM_LIST + [PTBR + i*2]] = [MEM_LIST + [PTBR + i*2]] - 1;
+			[PTBR + i*2] = -1;
+			[PTBR + i*2 + 1] = "00";
+		else 
+			if([PTBR + i*2] > 448) then
+				[DISK_LIST + [PTBR + i*2]] = [DISK_LIST + [PTBR + i*2]] - 1;
+				[PTBR + i*2] = -1;
+				[PTBR + i*2 + 1] = "00";
+			else
+				break;
+			endif;
+		endif;
 		i = i + 1;
 	endwhile;
+
+	store(6, 20);
 
 	i = 0;
 	while(i < 8) do
@@ -172,21 +186,4 @@ if(systemCallNo == 13) then
 	ireturn;
 endif;
 
-if(systemCallNo == 14) then
-	print ("C");
-	alias i S2;
-	i = 0;
-	//resume all waiting processes
-	while (i < 32) do
-		alias currentPCB S3;
-		currentPCB = READY_LIST + i*32;
-		if([currentPCB + 1] >= 100) then
-			[currentPCB + 1] = 1;
-		endif;
-		i = i + 1;
-	endwhile;
-
-	print ("C");
-	[physicalSP - 2] = 0;
-	ireturn;
-endif;
+	
