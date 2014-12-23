@@ -1,2711 +1,704 @@
-Enter timer
-fork
-start fork
-freepage allo
-29
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-40
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-C
-B
-exec ends
-Enter exhandl
-EX page:
-24
-Enter timer
-new IP:
-108
+1537
 1
-Enter timer
-new IP:
-18
-fork
 start fork
-freepage allo
-30
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
+ASDF:
 1
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-27
-Enter timer
-new IP:
-108
+end fork
+1569
 1
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-31
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
+1537
+1
+1569
+1
 start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-28
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
+FREE:
 2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-32
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
+ZZZZZ
+1
+102
+1569
+QQQQ
+1601
 2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-33
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
+end exec
+102
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+200
+1537
+1
+101
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+202
+1537
+1
+103
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+204
+1537
+1
+105
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+206
+1537
+1
+107
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+208
+1537
+1
+1601
+1
+1537
+1
+109
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+210
+1537
+1
+111
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+212
+1537
+1
+113
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+214
+1537
+1
+115
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+216
+1537
+1
+117
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+218
+1537
+1
+1601
+1
+1537
+1
+119
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+220
+1537
+1
+121
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+222
+1537
+1
+123
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+224
+1537
+1
+125
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+226
+1537
+1
+127
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+228
+1537
+1
+1601
+1
+1537
+1
+129
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+230
+1537
+1
+131
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+232
+1537
+1
+133
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+234
+1537
+1
+135
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+236
+1537
+1
+137
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+238
+1537
+1
+1601
+1
+1537
+1
+139
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+240
+1537
+1
+141
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+242
+1537
+1
+143
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+244
+1537
+1
+145
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+246
+1537
+1
+147
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+1537
+1
+1601
+1
+248
+1537
+1
+1601
+1
+1537
+1
+149
+1601
+1
+1537
+1
+CURRENTPID
+0
+250
+252
+254
+256
+258
+260
+262
+264
+266
+268
+270
+272
+274
+276
+278
+280
+282
+284
+286
+288
+290
+292
+294
+296
+298
+300
+302
+304
+306
+308
+310
+312
+314
+316
+318
+320
+322
+324
+326
+328
+330
+332
+334
+336
+338
+340
+342
+344
+346
+348
+350
+352
+354
+356
+358
+360
+362
+364
+366
+368
+370
+372
+374
+376
+378
+380
+382
+384
+386
+388
+390
+392
+394
+396
+398
+400
+402
+404
+406
+408
+410
+412
+414
+416
+418
+420
+422
+424
+426
+428
+430
+432
+434
+436
+438
+440
+442
+444
+446
+448
+450
+452
+454
+456
+458
+460
+462
+464
+466
+468
+470
+472
+474
+476
+478
+480
+482
+484
+486
+488
+490
+492
+494
+496
+498
+500
+502
+504
+506
+508
+510
+512
+514
+516
+518
+520
+522
+524
+526
+528
+530
+532
+534
+536
+538
+540
+542
+544
+546
+548
+550
+552
+554
+556
+558
+560
+562
+564
+566
+568
+570
+572
+574
+576
+578
+580
+582
+584
+586
+588
+590
+592
+594
+596
+598
+600
+CURRENTPID
 2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-34
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-35
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-36
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-37
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-38
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-39
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-40
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-41
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-42
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-43
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-44
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-45
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-46
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-47
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-106
-11
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-48
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-96
-11
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-49
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-106
-11
-Enter timer
-new IP:
-106
-12
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-50
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-96
-11
-Enter timer
-new IP:
-96
-12
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-51
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-106
-11
-Enter timer
-new IP:
-106
-12
-Enter timer
-new IP:
-106
-13
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-52
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-96
-11
-Enter timer
-new IP:
-96
-12
-Enter timer
-new IP:
-96
-13
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-53
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-106
-11
-Enter timer
-new IP:
-106
-12
-Enter timer
-new IP:
-106
-13
-Enter timer
-new IP:
-106
-14
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-54
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-96
-11
-Enter timer
-new IP:
-96
-12
-Enter timer
-new IP:
-96
-13
-Enter timer
-new IP:
-96
-14
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-55
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-106
-11
-Enter timer
-new IP:
-106
-12
-Enter timer
-new IP:
-106
-13
-Enter timer
-new IP:
-106
-14
-Enter timer
-new IP:
-106
-15
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-56
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-96
-11
-Enter timer
-new IP:
-96
-12
-Enter timer
-new IP:
-96
-13
-Enter timer
-new IP:
-96
-14
-Enter timer
-new IP:
-96
-15
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-57
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-106
-11
-Enter timer
-new IP:
-106
-12
-Enter timer
-new IP:
-106
-13
-Enter timer
-new IP:
-106
-14
-Enter timer
-new IP:
-106
-15
-Enter timer
-new IP:
-106
-16
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-58
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-96
-11
-Enter timer
-new IP:
-96
-12
-Enter timer
-new IP:
-96
-13
-Enter timer
-new IP:
-96
-14
-Enter timer
-new IP:
-96
-15
-Enter timer
-new IP:
-96
-16
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-59
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-106
-11
-Enter timer
-new IP:
-106
-12
-Enter timer
-new IP:
-106
-13
-Enter timer
-new IP:
-106
-14
-Enter timer
-new IP:
-106
-15
-Enter timer
-new IP:
-106
-16
-Enter timer
-new IP:
-106
-17
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-60
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-96
-11
-Enter timer
-new IP:
-96
-12
-Enter timer
-new IP:
-96
-13
-Enter timer
-new IP:
-96
-14
-Enter timer
-new IP:
-96
-15
-Enter timer
-new IP:
-96
-16
-Enter timer
-new IP:
-96
-17
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-61
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-106
-11
-Enter timer
-new IP:
-106
-12
-Enter timer
-new IP:
-106
-13
-Enter timer
-new IP:
-106
-14
-Enter timer
-new IP:
-106
-15
-Enter timer
-new IP:
-106
-16
-Enter timer
-new IP:
-106
-17
-Enter timer
-new IP:
-106
-18
-Enter timer
-new IP:
-18
-fork
-start fork
-freepage allo
-63
-end fork
-Enter timer
-new IP:
-30
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-96
-11
-Enter timer
-new IP:
-96
-12
-Enter timer
-new IP:
-96
-13
-Enter timer
-new IP:
-96
-14
-Enter timer
-new IP:
-96
-15
-Enter timer
-new IP:
-96
-16
-Enter timer
-new IP:
-96
-17
-Enter timer
-new IP:
-96
-18
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-50
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-70
-enter exec
-start exec
-A
-C
-B
-exec ends
-Enter exhandl
-EX page:
-63
-Enter timer
-new IP:
-108
-
-Enter timer
-new IP:
-106
-2
-Enter timer
-new IP:
-106
-3
-Enter timer
-new IP:
-106
-4
-Enter timer
-new IP:
-106
-5
-Enter timer
-new IP:
-106
-6
-Enter timer
-new IP:
-106
-7
-Enter timer
-new IP:
-106
-8
-Enter timer
-new IP:
-106
-9
-Enter timer
-new IP:
-106
-10
-Enter timer
-new IP:
-106
-11
-Enter timer
-new IP:
-106
-12
-Enter timer
-new IP:
-106
-13
-Enter timer
-new IP:
-106
-14
-Enter timer
-new IP:
-106
-15
-Enter timer
-new IP:
-106
-16
-Enter timer
-new IP:
-106
-17
-Enter timer
-new IP:
-106
-18
-Enter timer
-new IP:
-106
-19
-Enter timer
-new IP:
-18
-fork
-start fork
-B
-Enter timer
-new IP:
-98
-
-Enter timer
-new IP:
-96
-2
-Enter timer
-new IP:
-96
-3
-Enter timer
-new IP:
-96
-4
-Enter timer
-new IP:
-96
-5
-Enter timer
-new IP:
-96
-6
-Enter timer
-new IP:
-96
-7
-Enter timer
-new IP:
-96
-8
-Enter timer
-new IP:
-96
-9
-Enter timer
-new IP:
-96
-10
-Enter timer
-new IP:
-96
-11
-Enter timer
-new IP:
-96
-12
-Enter timer
-new IP:
-96
-13
-Enter timer
-new IP:
-96
-14
-Enter timer
-new IP:
-96
-15
-Enter timer
-new IP:
-96
-16
-Enter timer
-new IP:
-96
-17
-Enter timer
-new IP:
-96
-18
-Enter timer
-new IP:
-96
-19
-Enter timer
-new IP:
-38
-Enter timer
-new IP:
-88
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-Enter timer
-new IP:
-86
-<ERROR:8: > Illegal instruction
-
+101
+103
+105
+107
+109
+111
+113
+115
+117
+119
+121
+123
+125
+127
+129
+131
+133
+135
+137
+139
+141
+143
+145
+147
+149
+CURRENTPID
+1
+Machine is halting

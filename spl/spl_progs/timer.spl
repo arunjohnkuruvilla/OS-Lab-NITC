@@ -1,4 +1,4 @@
-//print("Enter timer");
+
 
 alias currentPID S0;
 currentPID = (PTBR - 1024) / 8;
@@ -32,7 +32,6 @@ max = READY_LIST + 1024;
 checkPCB = currentPCB + 32;
 
 
-
 while (checkPCB != currentPCB) do
 	if(checkPCB == max) then
 		checkPCB = READY_LIST;
@@ -49,6 +48,7 @@ if(checkPCB == currentPCB) then
 	[currentPCB + 1] = 2;
 	ireturn;
 endif;
+
 
 [newPCB + 1] = 2;
 BP = [newPCB + 2];

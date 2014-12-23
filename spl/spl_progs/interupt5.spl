@@ -10,6 +10,7 @@ alias currentPID S7;
 currentPID = (PTBR - 1024) / 8;
 
 if(systemCallNo == 8) then
+
 	alias i S2;
 	alias freePCB S3;
 	i = 1;
